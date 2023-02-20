@@ -2,14 +2,14 @@
 pragma solidity ^0.8.13;
 
 import "forge-std/Test.sol";
-import "../src/1.GuessTheNumberChallenge.sol";
+import "../src/1.GuessTheNumber.sol";
 
 contract CounterTest is Test {
-    GuessTheNumberChallenge public target;
+    GuessTheNumber public target;
     address player = vm.addr(1);
 
     function setUp() public {
-        target = new GuessTheNumberChallenge{value: 1 ether}();
+        target = new GuessTheNumber{value: 1 ether}();
         vm.label(player, "Player");
         vm.label(address(target), "Target");
         vm.deal(player, 1 ether);
